@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-link</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="login-style.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">
+            <div class="logo">
+                <span class="icon">D</span>
+                <span class="name">DevLink</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="team-dashboard.html">My Teams</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class='bx bx-moon'></i>
+        </button>
+    </nav>
+    
+    <div class="super-container">
+        <div class="signup-container">
+            <div class="main-title">Create an account</div>
+            
+            <a href="dashboard.html">
+                <div class="social-button">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg" alt="Google"
+                        class="social-logo">
+                    Continue with Google
+                </div>
+            </a>
+            
+            <a href="dashboard.html">
+                <div class="social-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/81/81323.png" alt="GitHub"
+                        class="social-logo">
+                    Continue with GitHub
+                </div>
+            </a>
+            
+            <a href="dashboard.html">
+                <div class="social-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-logo">
+                    Continue with LinkedIn
+                </div>
+            </a>
+            
+            <div class="divider">OR continue with email</div>
+
+            <div class="form-group">
+                <form action="dashboard.html">
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" id="fullName" class="form-input" required placeholder="Spider man">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="spiderman@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Create a secure password"
+                            required>
+                    </div>
+
+                    <button type="submit" class="create-account-btn">
+                        Create Account
+                    </button>
+                </form>
+                
+                <div class="signin-link">Already have an account?
+                    <a href="#">Sign in</a>
+                </div>
+                
+                <div class="terms-text">By creating an account, you agree to our <a href="#">Terms of Service</a> and <a
+                        href="#">Privacy Policy</a>.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.add('light-mode');
+            icon.classList.remove('bx-moon');
+            icon.classList.add('bx-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('bx-moon');
+                icon.classList.add('bx-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.remove('bx-sun');
+                icon.classList.add('bx-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+
+
+nav {
+    background: rgba(37, 37, 38, 0.7);
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #3e3e42;
+    border-bottom: 1px solid #3e3e42;
+    border-radius: 0px 0px 10px 10px;
+    padding: 5px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+body.light-mode nav {
+    background: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid #d0d7de;
+    border-bottom: 1px solid #d0d7de;
+}
+
+nav ul {
+    font-size: 18px;
+    list-style: none;
+    margin: auto;
+}
+
+nav li {
+    padding-left: 10px;
+    display: inline-block;
+}
+
+nav a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    transition: color 0.3s ease;
+}
+
+body.light-mode nav a {
+    color: #24292f;
+}
+
+nav a:hover {
+    transition: 0.3s;
+    color: rgb(240, 240, 48);
+}
+
+body.light-mode nav a:hover {
+    color: #0969da;
+}
+
+.logo .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 25px;
+    background: black;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .logo .icon {
+    background: #0969da;
+}
+
+.logo .name {
+    font-size: 20px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    margin-left: auto;
+    margin-right: 20px;
+    background: transparent;
+    border: 2px solid #3e3e42;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body.light-mode .theme-toggle {
+    border-color: #d0d7de;
+}
+
+.theme-toggle:hover {
+    border-color: #007acc;
+    transform: scale(1.1);
+}
+
+body.light-mode .theme-toggle:hover {
+    border-color: #0969da;
+}
+
+.theme-toggle i {
+    font-size: 24px;
+    color: #ffd700;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .theme-toggle i {
+    color: #f59e0b;
+}

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: #0d1117;
+    background-image:
+        radial-gradient(at 27% 37%, rgba(0, 122, 204, 0.15) 0px, transparent 50%),
+        radial-gradient(at 97% 21%, rgba(220, 220, 170, 0.1) 0px, transparent 50%),
+        radial-gradient(at 52% 99%, rgba(0, 122, 204, 0.08) 0px, transparent 50%),
+        radial-gradient(at 10% 29%, rgba(220, 220, 170, 0.12) 0px, transparent 50%);
+    color: #ffffff;
+    line-height: 1.5;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+body.light-mode {
+    background: #f6f8fa;
+    background-image:
+        radial-gradient(at 27% 37%, rgba(0, 122, 204, 0.08) 0px, transparent 50%),
+        radial-gradient(at 97% 21%, rgba(255, 193, 7, 0.06) 0px, transparent 50%),
+        radial-gradient(at 52% 99%, rgba(0, 122, 204, 0.05) 0px, transparent 50%),
+        radial-gradient(at 10% 29%, rgba(255, 193, 7, 0.07) 0px, transparent 50%);
+    color: #24292f;
+}
+
+.super-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-container {
+    max-width: 440px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: #252526;
+    border: 1px solid #3e3e42;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+body.light-mode .signup-container {
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container a {
+    text-decoration: none;
+}
+
+.header-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .header-text {
+    color: #57606a;
+}
+
+.main-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .main-title {
+    color: #24292f;
+}
+
+.social-button {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border: 1px solid #3e3e42;
+    border-radius: 8px;
+    background: #2d2d30;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0.75rem;
+}
+
+body.light-mode .social-button {
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    color: #24292f;
+}
+
+.social-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+body.light-mode .social-logo {
+    filter: brightness(0) invert(0);
+}
+
+.social-button:hover {
+    background-color: #37373d;
+    border-color: #007acc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+}
+
+body.light-mode .social-button:hover {
+    background-color: #ffffff;
+    border-color: #0969da;
+    box-shadow: 0 4px 12px rgba(9, 105, 218, 0.2);
+}
+
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #858585;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .divider {
+    color: #57606a;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #d4d4d4;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .form-label {
+    color: #24292f;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #3e3e42;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    transition: all 0.2s ease;
+}
+
+body.light-mode .form-input {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    color: #24292f;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #007acc;
+    background-color: #252526;
+    box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.2);
+}
+
+body.light-mode .form-input:focus {
+    background-color: #ffffff;
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+}
+
+.form-input::placeholder {
+    color: #858585;
+}
+
+body.light-mode .form-input::placeholder {
+    color: #6e7781;
+}
+
+.create-account-btn {
+    width: 100%;
+    padding: 0.65rem;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
+}
+
+body.light-mode .create-account-btn {
+    background-color: #0969da;
+    box-shadow: 0 4px 12px rgba(9, 105, 218, 0.2);
+}
+
+.create-account-btn:hover {
+    background-color: #005a9e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 122, 204, 0.4);
+}
+
+body.light-mode .create-account-btn:hover {
+    background-color: #0550ae;
+    box-shadow: 0 6px 16px rgba(9, 105, 218, 0.3);
+}
+
+.signin-link {
+    text-align: center;
+    font-size: 0.930rem;
+    color: #a0a0a0;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .signin-link {
+    color: #57606a;
+}
+
+.signin-link a {
+    color: #9cdcfe;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .signin-link a {
+    color: #0969da;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+    color: #007acc;
+}
+
+body.light-mode .signin-link a:hover {
+    color: #0550ae;
+}
+
+.terms-text {
+    font-size: 0.75rem;
+    color: #858585;
+    text-align: center;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .terms-text {
+    color: #57606a;
+}
+
+.terms-text a {
+    color: #dcdcaa;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .terms-text a {
+    color: #0969da;
+}
+
+.terms-text a:hover {
+    text-decoration: underline;
+    color: #9cdcfe;
+}
+
+body.light-mode .terms-text a:hover {
+    color: #0550ae;
+}

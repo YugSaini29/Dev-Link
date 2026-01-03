@@ -1,0 +1,307 @@
+{
+  "projects": [
+    {
+      "title": "AI-Powered Learning Platform",
+      "status": "Recruiting",
+      "description": "Building an adaptive learning platform that uses AI to personalize education for students.",
+      "author": "Sarah Chen",
+      "avatar": "SC",
+      "team": "3/5",
+      "location": "Remote",
+      "tags": ["React", "Python", "TensorFlow"]
+    },
+    {
+      "title": "DevLink Portfolio Builder",
+      "status": "In Progress",
+      "description": "A web app for developers to create and showcase their projects in an interactive portfolio.",
+      "author": "Yug Saini",
+      "avatar": "YS",
+      "team": "2/4",
+      "location": "Rewari",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "title": "Voice-to-Code Assistant",
+      "status": "Recruiting",
+      "description": "An AI assistant that converts voice commands into working code snippets for faster prototyping.",
+      "author": "Aisha Khan",
+      "avatar": "AK",
+      "team": "4/6",
+      "location": "Bangalore",
+      "tags": ["NLP", "Python", "OpenAI API"]
+    },
+    {
+      "title": "Mental Health Tracker",
+      "status": "Girls",
+      "description": "A mood-tracking app that visualizes emotional patterns and connects users to local therapists.",
+      "author": "Rohit Sharma",
+      "avatar": "RS",
+      "team": "5/5",
+      "location": "Delhi",
+      "tags": ["Flutter", "Firebase", "UX Design"]
+    },
+    {
+      "title": "Blockchain Voting System",
+      "status": "Recruiting",
+      "description": "Secure decentralized voting system to ensure transparent election processes.",
+      "author": "Neha Patel",
+      "avatar": "NP",
+      "team": "3/5",
+      "location": "Pune",
+      "tags": ["Solidity", "Web3.js", "Blockchain"]
+    },
+    {
+      "title": "Campus Connect",
+      "status": "In Progress",
+      "description": "A platform connecting students for study groups, projects, and events across universities.",
+      "author": "Ankit Verma",
+      "avatar": "AV",
+      "team": "2/5",
+      "location": "Mumbai",
+      "tags": ["Node.js", "MongoDB", "Express"]
+    },
+    {
+      "title": "EcoCart",
+      "status": "Completed",
+      "description": "An e-commerce platform that calculates and offsets carbon footprints for each purchase.",
+      "author": "Sakshi Mehra",
+      "avatar": "SM",
+      "team": "4/4",
+      "location": "Chandigarh",
+      "tags": ["React", "Firebase", "Stripe API"]
+    },
+    {
+      "title": "CodeMate",
+      "status": "Recruiting",
+      "description": "A collaborative code editor with AI-powered suggestions and debugging support.",
+      "author": "Ravi Kumar",
+      "avatar": "RK",
+      "team": "3/6",
+      "location": "Hyderabad",
+      "tags": ["Next.js", "OpenAI API", "TailwindCSS"]
+    },
+    {
+      "title": "Fitness Friend",
+      "status": "In Progress",
+      "description": "A personalized workout planner and tracker that adapts to your daily energy level.",
+      "author": "Tanvi Joshi",
+      "avatar": "TJ",
+      "team": "5/7",
+      "location": "Remote",
+      "tags": ["React Native", "Node.js", "Express"]
+    }
+  ],
+
+  "hackathons": [
+    {
+      "title": "Hack for Earth 2025",
+      "status": "Open",
+      "description": "Join innovators solving climate challenges for a sustainable planet.",
+      "author": "Hemant Rao",
+      "Requirements": "Need Java Backend Developer",
+      "team": "4/5",
+      "date": "19 Oct 25",
+      "location": "Delhi",
+      "avatar": "HR",
+      "tags": ["Sustainability", "AI", "IoT"]
+    },
+    {
+      "title": "CodeSprint 2025",
+      "status": "Girls",    
+      "description": "Empowering women in tech through 48 hours of innovation and collaboration.",
+      "author": "Meera Singh",
+      "Requirements": "Need UI/UX Designer",
+      "team": "3/5",
+      "date": "5 Dec 25",
+      "location": "Pune",
+      "avatar": "MS",
+      "tags": ["Web Dev", "Design", "Innovation"]
+    },
+    {
+      "title": "Hack the Future",
+      "status": "Open",
+      "description": "48-hour hackathon for next-gen developers solving real-world problems.",
+      "author": "Rajat Kapoor",
+      "Requirements": "Looking for ML Engineer",
+      "team": "5/6",
+      "date": "12 Jan 26",
+      "location": "Bangalore",
+      "avatar": "RK",
+      "tags": ["ML", "AI", "Cloud"]
+    },
+    {
+      "title": "SheCodes 2025",
+      "status": "Girls",
+      "description": "A coding event celebrating women developers with mentorship and prizes.",
+      "author": "Simran Kaur",
+      "Requirements": "Frontend React Dev",
+      "team": "4/4",
+      "date": "22 Nov 25",
+      "location": "Delhi",
+      "avatar": "SK",
+      "tags": ["Web Dev", "Community", "UI/UX"]
+    },
+    {
+      "title": "AIthon Global",
+      "status": "Open",
+      "description": "Global hackathon for AI-driven problem-solving across industries.",
+      "author": "Karan Patel",
+      "Requirements": "Data Scientist",
+      "team": "5/7",
+      "date": "3 Mar 26",
+      "location": "Remote",
+      "avatar": "KP",
+      "tags": ["AI", "ML", "Data"]
+    },
+    {
+      "title": "Innovate India",
+      "status": "Open",
+      "description": "Encouraging Indian youth to innovate for a sustainable and digital future.",
+      "author": "Suresh Iyer",
+      "Requirements": "App Developer",
+      "team": "4/5",
+      "date": "18 Feb 26",
+      "location": "Chennai",
+      "avatar": "SI",
+      "tags": ["IoT", "Innovation", "Startups"]
+    },
+    {
+      "title": "HealthHack 2025",
+      "status": "Open",
+      "description": "Create health tech solutions to make medical services more accessible.",
+      "author": "Priya Nair",
+      "Requirements": "Full Stack Developer",
+      "team": "5/5",
+      "date": "9 Jan 26",
+      "location": "Mumbai",
+      "avatar": "PN",
+      "tags": ["HealthTech", "AI", "Data"]
+    },
+    {
+      "title": "ClimateCode Challenge",
+      "status": "Open",
+      "description": "Hackathon focused on climate change and renewable energy solutions.",
+      "author": "Arjun Das",
+      "Requirements": "Backend Developer",
+      "team": "6/8",
+      "date": "29 Mar 26",
+      "location": "Remote",
+      "avatar": "AD",
+      "tags": ["Sustainability", "Environment", "IoT"]
+    },
+    {
+      "title": "TechHustle 2026",
+      "status": "Open",
+      "description": "Compete with top minds to build innovative tech startups in 48 hours.",
+      "author": "Nikhil Jain",
+      "Requirements": "Frontend Developer",
+      "team": "5/6",
+      "date": "20 Apr 26",
+      "location": "Hyderabad",
+      "avatar": "NJ",
+      "tags": ["Startups", "Web Dev", "AI"]
+    }
+  ],
+
+  "startups": [
+    {
+      "title": "GreenTech Innovations",
+      "status": "Funding",
+      "description": "Developing eco-friendly IoT solutions for smart cities.",
+      "author": "Ravi Kumar",
+      "Requirements": "Need React Developer",
+      "avatar": "RK",
+      "team": "10",
+      "location": "Bangalore",
+      "tags": ["IoT", "CleanTech", "Smart City"]
+    },
+    {
+      "title": "AquaSense Labs",
+      "status": "Ideation",
+      "description": "Smart sensors for water conservation and quality monitoring.",
+      "author": "Divya Nair",
+      "Requirements": "Embedded Systems Engineer",
+      "avatar": "DN",
+      "team": "6",
+      "location": "Chennai",
+      "tags": ["IoT", "WaterTech", "Sensors"]
+    },
+    {
+      "title": "MedAI Diagnostics",
+      "status": "Implementation",
+      "description": "AI-powered medical image diagnostics for faster, accurate detection.",
+      "author": "Rahul Verma",
+      "Requirements": "ML Engineer",
+      "avatar": "RV",
+      "team": "12",
+      "location": "Delhi",
+      "tags": ["AI", "Healthcare", "ML"]
+    },
+    {
+      "title": "FinLink",
+      "status": "Funding",
+      "description": "Simplifying financial literacy through gamified micro-learning.",
+      "author": "Nisha Patel",
+      "Requirements": "React Native Dev",
+      "avatar": "NP",
+      "team": "8",
+      "location": "Pune",
+      "tags": ["Finance", "Education", "Mobile App"]
+    },
+    {
+      "title": "AgroChain",
+      "status": "Implementation",
+      "description": "Blockchain-enabled supply chain solution for farmers.",
+      "author": "Arjun Reddy",
+      "Requirements": "Solidity Developer",
+      "avatar": "AR",
+      "team": "9",
+      "location": "Hyderabad",
+      "tags": ["Blockchain", "AgriTech", "Web3"]
+    },
+    {
+      "title": "SkillUp Labs",
+      "status": "Ideation",
+      "description": "Upskilling platform connecting mentors and learners globally.",
+      "author": "Sneha Kapoor",
+      "Requirements": "Frontend Developer",
+      "avatar": "SK",
+      "team": "7",
+      "location": "Remote",
+      "tags": ["EdTech", "React", "Learning"]
+    },
+    {
+      "title": "RideSmart Mobility",
+      "status": "Implementation",
+      "description": "Electric mobility startup building AI-based ride optimization.",
+      "author": "Harsh Vardhan",
+      "Requirements": "Backend Developer",
+      "avatar": "HV",
+      "team": "15",
+      "location": "Mumbai",
+      "tags": ["EV", "Mobility", "AI"]
+    },
+    {
+      "title": "NeuroFit",
+      "status": "Funding",
+      "description": "Wearable neurotech devices that track focus and productivity.",
+      "author": "Aditi Singh",
+      "Requirements": "Hardware Engineer",
+      "avatar": "AS",
+      "team": "9",
+      "location": "Bangalore",
+      "tags": ["NeuroTech", "Wearables", "HealthTech"]
+    },
+    {
+      "title": "UrbanHive",
+      "status": "Ideation",
+      "description": "AI-driven platform for smart urban housing and sustainability.",
+      "author": "Kunal Mehta",
+      "Requirements": "AI Developer",
+      "avatar": "KM",
+      "team": "11",
+      "location": "Delhi",
+      "tags": ["AI", "Real Estate", "Sustainability"]
+    }
+  ]
+}

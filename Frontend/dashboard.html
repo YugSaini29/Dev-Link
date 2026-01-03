@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLink-Dashboard</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">
+            <div class="logo">
+                <span class="icon">D</span>
+                <span class="name">DevLink</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="team-dashboard.html">My Teams</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class='bx bx-moon'></i>
+        </button>
+    </nav>
+    <div class="pagecontent">
+        <div class="welcome">Welcome back, Yug</div>
+        <div class="tagline">Here's what's happening with your projects and collaborations.</div>
+        <div class="tabs">
+            <a href="create-project.html">
+                <div class="first-tab">
+                    <div class="main"> Create Project</div>
+                    <div>Start a new collaboration</div>
+                </div>
+            </a>
+            <a href="community.html#hackathon">
+                <div class="tab">
+                    <img src="https://www.svgrepo.com/show/533399/calendar-plus-alt.svg" alt="">
+                    <div class="tab-content">
+                        <div class="main">Join Hackathon</div>
+                        <div class="tagline">Find exciting teams to work with</div>
+                    </div>
+                </div>
+            </a>
+            <a href="community.html">
+                <div class="tab">
+                    <img src="https://www.svgrepo.com/show/436259/team.svg" alt="">
+                    <div class="tab-content">
+                        <div class="main">Find Teams</div>
+                        <div class="tagline">Discover Collaborators</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="mega-section">
+            <div class="super-section">
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Your Active Projects</h2>
+                        <button class="btn-small">View All</button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>AI-Powered Code Review Tool</h3>
+                            <span class="progress">Progress 65%</span>
+                        </div>
+                        <p>Building a tool that uses AI to review code and suggest improvements</p>
+                        <div class="card-footer">
+                            <span>👥 4 members</span>
+                            <span class="tag status">In Progress</span>
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">OpenAI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Sustainable Shopping App</h3>
+                            <span class="progress">Progress 20%</span>
+                        </div>
+                        <p>Mobile app to help users make environmentally conscious shopping decisions</p>
+                        <div class="card-footer">
+                            <span>👥 3 members</span>
+                            <span class="tag status">Planning</span>
+                            <div class="tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Suggested for You</h2>
+                        <button class="btn-small">See More</button>
+                    </div>
+
+                    <div class="card">
+                        <h3>FinTech Dashboard</h3>
+                        <p>Looking for a React developer to build a financial analytics dashboard</p>
+                        <div class="card-footer">
+                            <span class="avatar">SC</span>
+                            <span>Sarah Chen</span>
+                            <span>2/5</span>
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">D3.js</span>
+                            </div>
+                            <button class="btn-dark">Request to Join</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Open Source CLI Tool</h3>
+                        <p>Building a developer productivity CLI tool, need Go developers</p>
+                        <div class="card-footer">
+                            <span class="avatar">AK</span>
+                            <span>Alex Kumar</span>
+                            <span>3/4</span>
+                            <div class="tags">
+                                <span class="tag">Go</span>
+                                <span class="tag">CLI</span>
+                                <span class="tag">DevOps</span>
+                            </div>
+                            <button class="btn-dark">Request to Join</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="super-section">
+                <div class="sidebar">
+
+                    <div class="sidebar-card">
+                        <h3>Your Stats</h3>
+                        <ul>
+                            <li>Projects Completed <span>8</span></li>
+                            <li>Collaborations <span>24</span></li>
+                            <li>Hackathons <span>5</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Recent Activity</h3>
+                        <ul class="activity">
+                            <li>💬 New message from Marcus in AI Code Review project <span>2 minutes ago</span></li>
+                            <li>👤 Utkarsh wants to join your Sustainable Shopping App team <span>1 hour ago</span></li>
+                            <li>⭐ AI Code Review Tool Task assigned to you <span>3 hours ago</span></li>
+                            <li>📅 Smart India hackathon starts in 2 days <span>1 day ago</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Upcoming Events</h3>
+                        <div class="event">Smart India Hackathon <span>Starts in 2 days</span></div>
+                        <div class="event">Team Meeting <span>Tomorrow 3:00 PM</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.add('light-mode');
+            icon.classList.remove('bx-moon');
+            icon.classList.add('bx-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('bx-moon');
+                icon.classList.add('bx-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.remove('bx-sun');
+                icon.classList.add('bx-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

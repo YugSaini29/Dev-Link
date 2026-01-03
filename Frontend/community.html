@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevLink - Explore</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="community-style.css">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <nav>
+    <a href="home.html">
+      <div class="logo">
+        <span class="icon">D</span>
+        <span class="name">DevLink</span>
+      </div>
+    </a>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="team-dashboard.html">My Teams</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class='bx bx-moon'></i>
+    </button>
+  </nav>
+
+  <div class="container">
+    <h1>Explore Opportunities</h1>
+    <p class="subtitle">Discover projects, hackathons, people, and startups to collaborate with.</p>
+
+    <div class="search-filter">
+      <input type="text" placeholder="Search for projects, people, or skills...">
+      <button class="filter-btn">Filters</button>
+    </div>
+
+    <div class="tabs">
+      <a href="#" class="tab-link active" data-section="projects">Projects</a>
+      <a href="#" class="tab-link" id="hackathon" data-section="hackathons">Hackathons</a>
+      <a href="#" class="tab-link" data-section="startups">Startups</a>
+    </div>
+
+    <div class="sorting">
+      <span id="result-count">Projects loaded</span>
+      <select>
+        <option>Most Recent</option>
+        <option>Most Popular</option>
+      </select>
+    </div>
+
+    
+    <div id="cards-container" class="cards">
+      <p>Loading content...</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 DevLink. All rights reserved.</p>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    // Check for saved theme preference or default to dark mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+      body.classList.add('light-mode');
+      icon.classList.remove('bx-moon');
+      icon.classList.add('bx-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      
+      if (body.classList.contains('light-mode')) {
+        icon.classList.remove('bx-moon');
+        icon.classList.add('bx-sun');
+        localStorage.setItem('theme', 'light');
+      } else {
+        icon.classList.remove('bx-sun');
+        icon.classList.add('bx-moon');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+  
+  <script src="community.js" defer></script>
+</body>
+
+</html>

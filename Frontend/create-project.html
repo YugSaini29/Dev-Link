@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project - DevLink</title>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d1117;
+            background-image: 
+                radial-gradient(at 27% 37%, rgba(0, 122, 204, 0.15) 0px, transparent 50%),
+                radial-gradient(at 97% 21%, rgba(220, 220, 170, 0.1) 0px, transparent 50%),
+                radial-gradient(at 52% 99%, rgba(0, 122, 204, 0.08) 0px, transparent 50%),
+                radial-gradient(at 10% 29%, rgba(220, 220, 170, 0.12) 0px, transparent 50%);
+            line-height: 1.5;
+            color: #ffffff;
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-mode {
+            background: #f6f8fa;
+            background-image:
+                radial-gradient(at 27% 37%, rgba(0, 122, 204, 0.08) 0px, transparent 50%),
+                radial-gradient(at 97% 21%, rgba(255, 193, 7, 0.06) 0px, transparent 50%),
+                radial-gradient(at 52% 99%, rgba(0, 122, 204, 0.05) 0px, transparent 50%),
+                radial-gradient(at 10% 29%, rgba(255, 193, 7, 0.07) 0px, transparent 50%);
+            color: #24292f;
+        }
+
+        nav {
+            background: rgba(37, 37, 38, 0.7);
+            z-index: 100;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #3e3e42;
+            border-bottom: 1px solid #3e3e42;
+            border-radius: 0px 0px 10px 10px;
+            padding: 5px 30px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode nav {
+            background: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid #d0d7de;
+            border-bottom: 1px solid #d0d7de;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 25px;
+            background: black;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .logo .icon {
+            background: #0969da;
+        }
+
+        .logo .name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .logo .name {
+            color: #24292f;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #d4d4d4;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 15px;
+            display: block;
+        }
+
+        body.light-mode nav ul li a {
+            color: #24292f;
+        }
+
+        nav ul li a:hover {
+            color: rgb(240, 240, 48);
+        }
+
+        body.light-mode nav ul li a:hover {
+            color: #0969da;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 2px solid #3e3e42;
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .theme-toggle {
+            border-color: #d0d7de;
+        }
+
+        .theme-toggle:hover {
+            border-color: #007acc;
+            transform: scale(1.1);
+        }
+
+        body.light-mode .theme-toggle:hover {
+            border-color: #0969da;
+        }
+
+        .theme-toggle i {
+            font-size: 24px;
+            color: #ffd700;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .theme-toggle i {
+            color: #f59e0b;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode h1 {
+            color: #24292f;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .subtitle {
+            color: #57606a;
+        }
+
+        .form-container {
+            background: #252526;
+            border: 1px solid #3e3e42;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .form-container {
+            background: #ffffff;
+            border: 1px solid #d0d7de;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .form-group label {
+            color: #24292f;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #3e3e42;
+            border-radius: 8px;
+            background: #1e1e1e;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        body.light-mode .form-group input,
+        body.light-mode .form-group textarea,
+        body.light-mode .form-group select {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            color: #24292f;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #007acc;
+            box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.2);
+        }
+
+        body.light-mode .form-group input:focus,
+        body.light-mode .form-group textarea:focus,
+        body.light-mode .form-group select:focus {
+            background: #ffffff;
+            border-color: #0969da;
+            box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #858585;
+        }
+
+        body.light-mode .form-group input::placeholder,
+        body.light-mode .form-group textarea::placeholder {
+            color: #6e7781;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .helper-text {
+            font-size: 12px;
+            color: #858585;
+            margin-top: 5px;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .helper-text {
+            color: #6e7781;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #007acc;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 122, 204, 0.3);
+        }
+
+        body.light-mode .btn-primary {
+            background: #0969da;
+            box-shadow: 0 2px 8px rgba(9, 105, 218, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #005a9e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 122, 204, 0.4);
+        }
+
+        body.light-mode .btn-primary:hover {
+            background: #0550ae;
+            box-shadow: 0 4px 16px rgba(9, 105, 218, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #d4d4d4;
+            border: 1px solid #3e3e42;
+        }
+
+        body.light-mode .btn-secondary {
+            color: #24292f;
+            border: 1px solid #d0d7de;
+        }
+
+        .btn-secondary:hover {
+            background: #2d2d30;
+            border-color: #007acc;
+        }
+
+        body.light-mode .btn-secondary:hover {
+            background: #f6f8fa;
+            border-color: #0969da;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #3e3e42;
+            margin-top: 40px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #858585;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .footer-bottom {
+            border-top: 1px solid #d0d7de;
+            color: #57606a;
+        }
+
+        .location-type {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .location-type input[type="radio"] {
+            display: none;
+        }
+
+        .location-type label {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #3e3e42;
+            border-radius: 6px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+        }
+
+        body.light-mode .location-type label {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            color: #24292f;
+        }
+
+        .location-type input[type="radio"]:checked + label {
+            background: #007acc;
+            color: #ffffff;
+            border-color: #007acc;
+        }
+
+        body.light-mode .location-type input[type="radio"]:checked + label {
+            background: #0969da;
+            border-color: #0969da;
+        }
+
+        .location-type label:hover {
+            background: #2d2d30;
+            border-color: #007acc;
+        }
+
+        body.light-mode .location-type label:hover {
+            background: #ffffff;
+            border-color: #0969da;
+        }
+
+        .location-type input[type="radio"]:checked + label:hover {
+            background: #007acc;
+        }
+
+        body.light-mode .location-type input[type="radio"]:checked + label:hover {
+            background: #0969da;
+        }
+
+        #cityInput {
+            display: none;
+        }
+
+        #locationCity:checked ~ #cityInput {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .tags-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid #3e3e42;
+            border-radius: 8px;
+            background: #1e1e1e;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .tags-grid {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+        }
+
+        .tag-checkbox {
+            display: none;
+        }
+
+        .tag-label {
+            padding: 8px 12px;
+            background: #37373d;
+            border: 1px solid #3e3e42;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #9cdcfe;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: block;
+        }
+
+        body.light-mode .tag-label {
+            background: #ddf4ff;
+            border: 1px solid #54aeff;
+            color: #0969da;
+        }
+
+        .tag-checkbox:checked + .tag-label {
+            background: #007acc;
+            color: #ffffff;
+            border-color: #007acc;
+        }
+
+        body.light-mode .tag-checkbox:checked + .tag-label {
+            background: #0969da;
+            border-color: #0969da;
+        }
+
+        .tag-label:hover {
+            background: #45454d;
+            border-color: #007acc;
+        }
+
+        body.light-mode .tag-label:hover {
+            background: #b6e3ff;
+            border-color: #0969da;
+        }
+
+        .tag-checkbox:checked + .tag-label:hover {
+            background: #005a9e;
+        }
+
+        body.light-mode .tag-checkbox:checked + .tag-label:hover {
+            background: #0550ae;
+        }
+
+        .additional-tags {
+            margin-top: 10px;
+        }
+
+        .additional-tags input {
+            margin-top: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid #3e3e42;
+            border-radius: 8px;
+            background: #1e1e1e;
+            transition: all 0.3s ease;
+        }
+
+        body.light-mode .skills-grid {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+        }
+
+        .skill-checkbox {
+            display: none;
+        }
+
+        .skill-label {
+            padding: 8px 12px;
+            background: #37373d;
+            border: 1px solid #3e3e42;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #9cdcfe;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: block;
+        }
+
+        body.light-mode .skill-label {
+            background: #ddf4ff;
+            border: 1px solid #54aeff;
+            color: #0969da;
+        }
+
+        .skill-checkbox:checked + .skill-label {
+            background: #007acc;
+            color: #ffffff;
+            border-color: #007acc;
+        }
+
+        body.light-mode .skill-checkbox:checked + .skill-label {
+            background: #0969da;
+            border-color: #0969da;
+        }
+
+        .skill-label:hover {
+            background: #45454d;
+            border-color: #007acc;
+        }
+
+        body.light-mode .skill-label:hover {
+            background: #b6e3ff;
+            border-color: #0969da;
+        }
+
+        .skill-checkbox:checked + .skill-label:hover {
+            background: #005a9e;
+        }
+
+        body.light-mode .skill-checkbox:checked + .skill-label:hover {
+            background: #0550ae;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">
+            <div class="logo">
+                <span class="icon">D</span>
+                <span class="name">DevLink</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="team-dashboard.html">My Teams</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class='bx bx-moon'></i>
+        </button>
+    </nav>
+
+    <div class="container">
+        <h1>Create New Project</h1>
+        <p class="subtitle">Share your project idea and find collaborators to bring it to life.</p>
+
+        <div class="form-container">
+            <form action="http://localhost:3000/projects" method="POST">
+                <div class="form-group">
+                    <label for="projectTitle">Project Title *</label>
+                    <input type="text" id="projectTitle" name="projectTitle" placeholder="e.g., AI-Powered Learning Platform" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDescription">Project Description *</label>
+                    <textarea id="projectDescription" name="projectDescription" placeholder="Describe your project, its goals, and what makes it unique..." required></textarea>
+                    <span class="helper-text">Provide a clear and concise description that will attract the right collaborators.</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="authorName">Your Name *</label>
+                        <input type="text" id="authorName" name="authorName" placeholder="e.g., Sarah Chen" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Project Status *</label>
+                        <select id="status" name="status" required>
+                            <option value="">Select status</option>
+                            <option value="recruiting">Recruiting</option>
+                            <option value="progress">In Progress</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="currentMembers">Current Team Members *</label>
+                        <input type="number" id="currentMembers" name="currentMembers" min="1" placeholder="e.g., 3" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maxMembers">Maximum Team Size *</label>
+                        <input type="number" id="maxMembers" name="maxMembers" min="1" placeholder="e.g., 5" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Location Type *</label>
+                    <div class="location-type">
+                        <input type="radio" id="locationRemote" name="locationType" value="remote" required>
+                        <label for="locationRemote">🌍 Remote</label>
+                        
+                        <input type="radio" id="locationCity" name="locationType" value="city">
+                        <label for="locationCity">📍 Specific City</label>
+                    </div>
+                    <input type="text" id="cityInput" name="cityName" placeholder="Enter city name (e.g., San Francisco)">
+                </div>
+
+                <div class="form-group">
+                    <label>Technology Stack *</label>
+                    <div class="tags-grid">
+                        <input type="checkbox" id="tech1" name="technologies" value="React" class="tag-checkbox">
+                        <label for="tech1" class="tag-label">React</label>
+
+                        <input type="checkbox" id="tech2" name="technologies" value="Vue.js" class="tag-checkbox">
+                        <label for="tech2" class="tag-label">Vue.js</label>
+
+                        <input type="checkbox" id="tech3" name="technologies" value="Angular" class="tag-checkbox">
+                        <label for="tech3" class="tag-label">Angular</label>
+
+                        <input type="checkbox" id="tech4" name="technologies" value="Next.js" class="tag-checkbox">
+                        <label for="tech4" class="tag-label">Next.js</label>
+
+                        <input type="checkbox" id="tech5" name="technologies" value="Node.js" class="tag-checkbox">
+                        <label for="tech5" class="tag-label">Node.js</label>
+
+                        <input type="checkbox" id="tech6" name="technologies" value="Python" class="tag-checkbox">
+                        <label for="tech6" class="tag-label">Python</label>
+
+                        <input type="checkbox" id="tech7" name="technologies" value="TensorFlow" class="tag-checkbox">
+                        <label for="tech7" class="tag-label">TensorFlow</label>
+
+                        <input type="checkbox" id="tech8" name="technologies" value="FastAPI" class="tag-checkbox">
+                        <label for="tech8" class="tag-label">FastAPI</label>
+
+                        <input type="checkbox" id="tech9" name="technologies" value="TypeScript" class="tag-checkbox">
+                        <label for="tech9" class="tag-label">TypeScript</label>
+
+                        <input type="checkbox" id="tech10" name="technologies" value="Firebase" class="tag-checkbox">
+                        <label for="tech10" class="tag-label">Firebase</label>
+
+                        <input type="checkbox" id="tech11" name="technologies" value="MongoDB" class="tag-checkbox">
+                        <label for="tech11" class="tag-label">MongoDB</label>
+
+                        <input type="checkbox" id="tech12" name="technologies" value="AWS" class="tag-checkbox">
+                        <label for="tech12" class="tag-label">AWS</label>
+
+                        <input type="checkbox" id="tech13" name="technologies" value="Stripe" class="tag-checkbox">
+                        <label for="tech13" class="tag-label">Stripe</label>
+
+                        <input type="checkbox" id="tech14" name="technologies" value="Flutter" class="tag-checkbox">
+                        <label for="tech14" class="tag-label">Flutter</label>
+
+                        <input type="checkbox" id="tech15" name="technologies" value="React Native" class="tag-checkbox">
+                        <label for="tech15" class="tag-label">React Native</label>
+                    </div>
+                    <div class="additional-tags">
+                        <input type="text" name="otherTechnologies" placeholder="Other technologies (comma-separated)">
+                    </div>
+                    <span class="helper-text">Select technologies used in your project or add custom ones below.</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Need Team Members with Skills</label>
+                    <div class="skills-grid">
+                        <input type="checkbox" id="skill1" name="skills" value="UI/UX Design" class="skill-checkbox">
+                        <label for="skill1" class="skill-label">UI/UX Design</label>
+
+                        <input type="checkbox" id="skill2" name="skills" value="Frontend Development" class="skill-checkbox">
+                        <label for="skill2" class="skill-label">Frontend Development</label>
+
+                        <input type="checkbox" id="skill3" name="skills" value="Backend Development" class="skill-checkbox">
+                        <label for="skill3" class="skill-label">Backend Development</label>
+
+                        <input type="checkbox" id="skill4" name="skills" value="Full Stack Development" class="skill-checkbox">
+                        <label for="skill4" class="skill-label">Full Stack Development</label>
+
+                        <input type="checkbox" id="skill5" name="skills" value="Mobile Development" class="skill-checkbox">
+                        <label for="skill5" class="skill-label">Mobile Development</label>
+
+                        <input type="checkbox" id="skill6" name="skills" value="Data Science" class="skill-checkbox">
+                        <label for="skill6" class="skill-label">Data Science</label>
+
+                        <input type="checkbox" id="skill7" name="skills" value="Machine Learning" class="skill-checkbox">
+                        <label for="skill7" class="skill-label">Machine Learning</label>
+
+                        <input type="checkbox" id="skill8" name="skills" value="DevOps" class="skill-checkbox">
+                        <label for="skill8" class="skill-label">DevOps</label>
+
+                        <input type="checkbox" id="skill9" name="skills" value="Database Management" class="skill-checkbox">
+                        <label for="skill9" class="skill-label">Database Management</label>
+
+                        <input type="checkbox" id="skill10" name="skills" value="Cloud Architecture" class="skill-checkbox">
+                        <label for="skill10" class="skill-label">Cloud Architecture</label>
+
+                        <input type="checkbox" id="skill11" name="skills" value="Marketing" class="skill-checkbox">
+                        <label for="skill11" class="skill-label">Marketing</label>
+
+                        <input type="checkbox" id="skill12" name="skills" value="Product Management" class="skill-checkbox">
+                        <label for="skill12" class="skill-label">Product Management</label>
+
+                        <input type="checkbox" id="skill13" name="skills" value="Blockchain Development" class="skill-checkbox">
+                        <label for="skill13" class="skill-label">Blockchain Development</label>
+
+                        <input type="checkbox" id="skill14" name="skills" value="Cybersecurity" class="skill-checkbox">
+                        <label for="skill14" class="skill-label">Cybersecurity</label>
+                    </div>
+                    <div class="additional-tags">
+                        <input type="text" name="otherSkills" placeholder="Other skills (comma-separated)">
+                    </div>
+                    <span class="helper-text">Specify skills you're looking for in potential team members or add custom ones below.</span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 DevLink. All rights reserved.</p>
+    </div>
+
+    <script>
+
+        
+
+
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.add('light-mode');
+            icon.classList.remove('bx-moon');
+            icon.classList.add('bx-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                icon.classList.remove('bx-moon');
+                icon.classList.add('bx-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.remove('bx-sun');
+                icon.classList.add('bx-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+<script>
+const form = document.querySelector('form');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Collect data
+    const formData = new FormData(form);
+    const technologies = formData.getAll('technologies'); // array
+    const skills = formData.getAll('skills'); // array
+    const authorName = formData.get('authorName') || "";
+    const data = {
+        title: formData.get('projectTitle'),
+        description: formData.get('projectDescription'),
+        author: authorName,
+        avatar: (() => {
+        const names = authorName.trim().split(" ");
+        if (names.length === 1) {
+            return (names[0][0] + names[0][0]).toUpperCase();
+        } else {
+            return (names[0][0] + names[1][0]).toUpperCase();
+        }
+    })(),
+        status: formData.get('status'),
+        team: `${formData.get('currentMembers')}/${formData.get('maxMembers')}`,
+        location: formData.get('locationType') === 'city' ? formData.get('cityName') : formData.get('locationType'),
+        tags: technologies,
+        skills: skills
+    };
+
+    const res = await fetch('http://localhost:3000/projects', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    console.log(result);
+});
+</script>
+
+
+</body>
+
+</html>

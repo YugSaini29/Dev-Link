@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Teams - DevLink</title>
+  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="community-style.css">
+  <link rel="stylesheet" href="team-dashboard-style.css">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <nav>
+    <a href="home.html">
+      <div class="logo">
+        <span class="icon">D</span>
+        <span class="name">DevLink</span>
+      </div>
+    </a>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="team-dashboard.html">My Teams</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class='bx bx-moon'></i>
+    </button>
+  </nav>
+
+  <div class="container">
+    <h1>My Teams</h1>
+    <p class="subtitle">Manage your team projects and track your assigned tasks</p>
+
+    <!-- dynamic content goes here -->
+    <div id="teamsContainer"></div>
+
+    <div class="footer-bottom">
+      <p>© 2025 DevLink. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script>
+    // theme toggle (keeps your existing behavior)
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+      body.classList.add('light-mode');
+      icon.classList.remove('bx-moon');
+      icon.classList.add('bx-sun');
+    }
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      if (body.classList.contains('light-mode')) {
+        icon.classList.remove('bx-moon');
+        icon.classList.add('bx-sun');
+        localStorage.setItem('theme', 'light');
+      } else {
+        icon.classList.remove('bx-sun');
+        icon.classList.add('bx-moon');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Utility: compute initials e.g. "Sarah Chen" -> "SC"
+    function initials(name) {
+      if (!name) return '';
+      const parts = name.trim().split(/\s+/);
+      if (parts.length === 1) return parts[0].slice(0,2).toUpperCase();
+      return (parts[0][0] + (parts[1][0] || '')).toUpperCase();
+    }
+
+    // Utility: format date (you can tweak)
+    function formatDate(iso) {
+      if (!iso) return '';
+      const d = new Date(iso);
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    // Render a single team card (matches your CSS classes)
+    function renderTeamCard(team) {
+      const created = formatDate(team.createdAt);
+      const avatar = initials(team.author);
+      return `
+        <div class="team-card" data-team-id="${team._id}">
+          <div class="team-header">
+            <div class="team-info">
+              <h2>📁 ${escapeHtml(team.title)}</h2>
+              <p>${escapeHtml(team.projectId ? 'Project ID: ' + team.projectId : '')}</p>
+              <div class="team-data">
+                <span>👨‍💼 Team Creator: ${escapeHtml(team.author)}</span>
+                <span>📅 Created: ${created}</span>
+              </div>
+            </div>
+            <div class="team-stats">
+              <div class="stat-badge active">Joined</div>
+              <div class="stat-badge">${created ? 'Created ' + created : ''}</div>
+            </div>
+          </div>
+
+          <div class="members-section">
+            <span style="color: #a0a0a0; font-size: 14px; font-weight: 600;">Team Creator:</span>
+            <div class="member-avatar">${avatar}</div>
+          </div>
+
+          <div class="section-title">📋 Details</div>
+
+          <div class="tasks-list">
+            <div class="empty-state">
+              <h3>${escapeHtml(team.title)}</h3>
+              <p style="color:#858585;">Created by ${escapeHtml(team.author)} · Project ID: ${escapeHtml(team.projectId || '-')}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // simple HTML-escape to avoid injecting weird chars
+    function escapeHtml(str) {
+      if (str === undefined || str === null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // Fetch teams and populate the page
+    async function loadTeams() {
+      const container = document.getElementById('teamsContainer');
+      container.innerHTML = '<p class="subtitle" style="padding:18px 0">Loading teams...</p>';
+
+      try {
+        // adjust URL if your team route is mounted differently; /team works if app.use('/team', teamRoutes)
+        const res = await fetch('/team');
+        if (!res.ok) throw new Error('Failed to fetch teams: ' + res.status);
+        const teams = await res.json();
+
+        if (!Array.isArray(teams) || teams.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <h3>No teams yet</h3>
+              <p>Click "Join" on a project in Community to add it here.</p>
+            </div>
+          `;
+          return;
+        }
+
+        // build HTML
+        container.innerHTML = teams.map(t => renderTeamCard(t)).join('');
+      } catch (err) {
+        console.error('Error loading teams:', err);
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3>Could not load teams</h3>
+            <p style="color:#d9534f;">${escapeHtml(String(err.message || err))}</p>
+          </div>
+        `;
+      }
+    }
+
+    // load on ready
+    document.addEventListener('DOMContentLoaded', loadTeams);
+  </script>
+</body>
+</html>
